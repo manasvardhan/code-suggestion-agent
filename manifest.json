@@ -1,0 +1,33 @@
+{
+  "name": "Code Suggester",
+  "id": "code_suggester",
+  "icon": "code",
+  "version": "1.0.0",
+  "description": "AI-powered code suggestions based on your current coding context",
+  "author": "Friday",
+  "credentials": null,
+  "entry": "agent.py",
+  "input_schema": {
+    "type": "object",
+    "properties": {
+      "context": {
+        "type": "string",
+        "description": "Code context including snippets, errors, file type, and intent"
+      }
+    },
+    "required": ["context"]
+  },
+  "output_schema": {
+    "type": "object",
+    "properties": {
+      "suggestion": {
+        "type": "string",
+        "description": "The code suggestion with explanation"
+      }
+    }
+  },
+  "triggers": {
+    "keywords": ["code", "coding", "programming", "function", "error", "bug", "debug", "implement"],
+    "app_patterns": ["Code", "VSCode", "Visual Studio", "Xcode", "IntelliJ", "PyCharm", "Terminal", "iTerm"]
+  }
+}
