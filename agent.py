@@ -21,7 +21,7 @@ class CodeSuggester:
             base_url="https://openrouter.ai/api/v1",
             api_key=self.api_key,
         )
-        self.model = "anthropic/claude-sonnet-4"  # Good for code
+        self.model = "openai/gpt-4o-mini"  # Fast and good for code
 
     def run(self, context: str) -> str:
         """
@@ -75,7 +75,7 @@ Provide a relevant, helpful code suggestion."""
                     {"role": "user", "content": user_prompt},
                 ],
                 temperature=0.3,
-                max_tokens=1000,
+                max_tokens=500,  # Keep responses concise for speed
             )
             return response.choices[0].message.content
 
